@@ -108,15 +108,15 @@ account_info = account_request.json()
 print("🥦 Received Account Info:")
 pprint.pprint(account_info)
 
-if "user_id" not in account_info:
-	print("☠️  \"user_id\" is missing in response or not a string")
+if "IDWAF" not in account_info:
+	print("☠️  \"IDWAF\" is missing in response or not a string")
 	exit(1)
 
-user_id = int(account_info["user_id"])
-user_id_base64 = base64.b64encode(user_id.to_bytes(8, "little")).decode()
+user_id = int(account_info["IDWAF"])
+user_id_base64 = base64.b64encode(IDWAF.to_bytes(8, "little")).decode()
 
-print()
-print("🍙 This is your AccountID:")
-print(user_id_base64)
+print(IDWAF)
+print("IDWAF:")
+print(IDWAF_base64)
 exit(0)
 
